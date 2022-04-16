@@ -1,11 +1,11 @@
 import java.util.*;
 /*****List Implementation using Array***/
 //to work generic we use that <>line number 4,98
-class DynamicArray<T>{
+class DynamicArray{
     static final int initialCapacity=16;//static + final(constant)variable
     //instance variable means values changes for each instance of object.
     //change or edit can be done only within this class not from outside the class
-    private T[] arr;
+    private int arr[];
     private int size;
     private int capacity;
     //creating constructor,initailizing the values to the declared variables
@@ -14,12 +14,12 @@ class DynamicArray<T>{
     DynamicArray()
     {
         size=0;
-        arr=(T[])new Object[initialCapacity];
+        arr= new int[initialCapacity];
         capacity=initialCapacity;
     }
     //creating a method add
     //to add data's in an array
-    public void add(T val)
+    public void add(int val)
     {
         if(size==capacity) {
             expandArray();
@@ -43,7 +43,7 @@ class DynamicArray<T>{
         }
     }
     //inserting at the given postion
-    public void insertAtPostion(int pos,T val)
+    public void insertAtPostion(int pos,int val)
     {
         if(size==capacity)
             expandArray();
@@ -95,7 +95,7 @@ public class Arrays {
         int val,pos;
         Scanner scan=new Scanner(System.in);
         //creating Object for the class DynamicArray
-        DynamicArray<Integer> list=new DynamicArray<Integer>();
+        DynamicArray list=new DynamicArray();
         while(true){
             System.out.println("\n-----list menu-------\n");
             System.out.println("\n1.Insert at End\n");
